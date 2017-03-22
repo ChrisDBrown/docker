@@ -16,7 +16,7 @@ dockerfile: clean
 	-D COMPOSER=${COMPOSER} \
 	Dockerfile.m4 > Dockerfile
 
-clean php:
+clean:
 	rm -rf Dockerfile
 
 build: dockerfile
