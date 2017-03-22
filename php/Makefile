@@ -10,13 +10,13 @@ endif
 default: build
 
 dockerfile: clean
-	m4 --include=./includes/ \
+	m4 --include=../includes/ \
 	-D IMAGE_TAG=${IMAGE_TAG} \
 	-D GIT=${GIT} \
 	-D COMPOSER=${COMPOSER} \
-	php/Dockerfile.m4 > Dockerfile
+	Dockerfile.m4 > Dockerfile
 
-clean:
+clean php:
 	rm -rf Dockerfile
 
 build: dockerfile
