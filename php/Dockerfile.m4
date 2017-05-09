@@ -15,4 +15,6 @@ RUN apt-get update && apt-get install -y \
     && apt-get autoclean -y && apt-get --purge remove g++ -y \
     && rm -rf /tmp/*
 
+COPY memory.ini /usr/local/etc/php/conf.d/memory.ini
+
 ifelse(COMPOSER, true, include(`composer.m4'))

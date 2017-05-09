@@ -20,7 +20,7 @@ clean:
 	rm -rf Dockerfile
 
 build: dockerfile
-	docker build -t ${NAME}:${TAG} .
+	docker build -t ${NAME}:${TAG} . --squash
 
 push:
 	docker push ${NAME}:${TAG}
