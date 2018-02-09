@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
         g++ \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-configure intl \
-    && docker-php-ext-install -j$(nproc) gd intl mcrypt iconv bcmath zip soap \
+    && docker-php-ext-install -j$(nproc) gd pdo_mysql intl mcrypt iconv bcmath zip soap \
     && apt-get autoclean -y && apt-get --purge remove g++ -y \
     && rm -rf /tmp/*
 
